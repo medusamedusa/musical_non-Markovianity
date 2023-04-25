@@ -10,9 +10,10 @@
 
 int main() {
 	
-	float frequency[N], start[N],duration[N], intensity[N], delta_frequency[N],delta_start[N],delta_duration[N],delta_intensity[N]; //mettere come double. &lf?
-	float somma_freq,somma_start,somma_duration,somma_intensity,mean_value_frequency,mean_value_start,mean_value_duration,mean_value_intensity;
-	
+	float frequency[N], start[N], duration[N], intensity[N], delta_frequency[N], delta_start[N], delta_duration[N], delta_intensity[N]; //mettere come double. &lf?
+	float somma_freq, somma_start,somma_duration,somma_intensity,mean_value_frequency,mean_value_start,mean_value_duration,mean_value_intensity;
+ rot			
+ 	
 	int i,j;
 	
 	FILE *file_dati_entrata;
