@@ -38,8 +38,6 @@ int main() {
 //	file_dati_uscita_start_intensity = fopen("/Users/mariamannone/Desktop/Programma_MatriciMusica/numeri_GLASS/matrici_Glass/Glass_start_intensity_12.txt","w");
 	
 	
-	
-	
 //	file_dati_entrata = fopen("/Users/mariamannone/Desktop/Programma_MatriciMusica/dati_Bellini/Bellini_16.txt","r");
 //	file_dati_uscita_frequency_start = fopen("/Users/mariamannone/Desktop/Programma_MatriciMusica/matrici_Bellini/Bellini_matrice_frequency_start_16.txt","w");
 //	file_dati_uscita_frequency_duration = fopen("/Users/mariamannone/Desktop/Programma_MatriciMusica/matrici_Bellini/Bellini_matrice_frequency_duration_16.txt","w");
@@ -53,8 +51,6 @@ int main() {
 //	file_dati_uscita_frequency_intensity = fopen("/Users/mariamannone/Desktop/Programma_MatriciMusica/matrici_Maderna/Maderna_matrice_frequency_intensity_2.txt","w");
 //	file_dati_uscita_duration_intensity = fopen("/Users/mariamannone/Desktop/Programma_MatriciMusica/matrici_Maderna/Maderna_matrice_duration_intensity_2.txt","w");
 //	file_dati_uscita_start_intensity = fopen("/Users/mariamannone/Desktop/Programma_MatriciMusica/matrici_Maderna/Maderna_matrice_start_intensity_2.txt","w");
-	
-	
 	
 	
 //	file_dati_entrata = fopen("/Users/mariamannone/Desktop/Programma_MatriciMusica/dati_Bellini_periodi/Bellini_frase_7.txt","r");
@@ -80,16 +76,14 @@ int main() {
 	/* Acquisizione dati */
 	 
 	
-	
-	
-	for(i=0;i<N;i++) {
-		fscanf(file_dati_entrata,"%f\t%f\t%f\t%f",&frequency[i],&start[i],&duration[i],&intensity[i]);
+	for(i=0; i<N; i++) {
+		fscanf(file_dati_entrata, "%f\t%f\t%f\t%f", &frequency[i], &start[i], &duration[i], &intensity[i]);
 	}
 	
 	printf("\nfrequenze\tstart\t\tdurate\tintensita'\n");
 	
-	for(i=0;i<N;i++) {
-		printf("%f\t%f\t%f\t%f\n",frequency[i],start[i],duration[i],intensity[i]);
+	for(i=0; i<N; i++) {
+		printf("%f\t%f\t%f\t%f\n", frequency[i], start[i], duration[i], intensity[i]);
 	}
 	
 	printf("\n");
