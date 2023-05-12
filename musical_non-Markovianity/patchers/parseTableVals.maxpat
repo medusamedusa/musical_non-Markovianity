@@ -182,7 +182,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "(list) jit.cellblock output",
 					"id" : "obj-124",
 					"index" : 0,
 					"maxclass" : "inlet",
@@ -195,7 +195,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "(list) of frequency",
 					"id" : "obj-125",
 					"index" : 0,
 					"maxclass" : "outlet",
@@ -207,7 +207,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "(list) of start",
 					"id" : "obj-126",
 					"index" : 0,
 					"maxclass" : "outlet",
@@ -219,7 +219,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "(list) of duration",
 					"id" : "obj-127",
 					"index" : 0,
 					"maxclass" : "outlet",
@@ -231,7 +231,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "(list) of intensity",
 					"id" : "obj-128",
 					"index" : 0,
 					"maxclass" : "outlet",
@@ -243,7 +243,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "(int) number of rows",
 					"id" : "obj-129",
 					"index" : 0,
 					"maxclass" : "outlet",
