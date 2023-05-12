@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 192.0, 129.0, 640.0, 638.0 ],
+		"rect" : [ 91.0, 130.0, 640.0, 638.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,7 +40,6 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"hidden" : 1,
 					"id" : "obj-44",
 					"maxclass" : "message",
 					"numinlets" : 2,
