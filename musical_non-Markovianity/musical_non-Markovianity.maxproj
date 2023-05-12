@@ -2,7 +2,7 @@
 	"name" : "musical_non-Markovianity",
 	"version" : 1,
 	"creationdate" : 3766680765,
-	"modificationdate" : 3766730576,
+	"modificationdate" : 3766753244,
 	"viewrect" : [ 25.0, 104.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -27,6 +27,16 @@
 			}
 ,
 			"parseInputFiles.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"matrix.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"ifRanges.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
