@@ -46,8 +46,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 396.5, 426.0, 123.0, 35.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 396.5, 426.0, 126.0, 35.0 ],
 					"text" : "script sendbox output comment $1"
 				}
 
@@ -121,7 +120,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 462.5, 319.5, 108.0, 22.0 ],
-					"presentation_linecount" : 2,
 					"text" : "(list) delta #1 norm"
 				}
 
@@ -532,20 +530,20 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "delta",
+					"comment" : "(list) delta #1 norm",
 					"id" : "obj-2",
 					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 41.0, 629.0, 30.0, 30.0 ],
+					"patching_rect" : [ 55.0, 629.0, 30.0, 30.0 ],
 					"varname" : "output"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"comment" : "deltas",
+					"comment" : "(list) of #1 values",
 					"id" : "obj-1",
 					"index" : 0,
 					"maxclass" : "inlet",
@@ -756,24 +754,23 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
-					"midpoints" : [ 231.0, 613.0, 50.5, 613.0 ],
-					"order" : 1,
+					"destination" : [ "obj-35", 0 ],
 					"source" : [ "obj-34", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-35", 0 ],
-					"order" : 0,
-					"source" : [ "obj-34", 0 ]
+					"destination" : [ "obj-2", 0 ],
+					"order" : 1,
+					"source" : [ "obj-36", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-34", 0 ],
+					"order" : 0,
 					"source" : [ "obj-36", 0 ]
 				}
 
@@ -804,7 +801,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"order" : 1,
+					"source" : [ "obj-39", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-34", 0 ],
+					"order" : 0,
 					"source" : [ "obj-39", 0 ]
 				}
 
