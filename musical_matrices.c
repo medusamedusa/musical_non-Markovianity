@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#define N 7
+#define N 7 //this is actually driving a lot of things below, I think it is the number of notes, which could be retrieved programmatically from the files just by looking at the number of lines.
 
 //varia a seconda del numero di note della sequenza in esame. Da cambiare manualmente, come il nome dei file
 
@@ -485,10 +485,10 @@ int main() {
 	
 	//contatori relativi ai singoli elementi di matrice
 	
-	float count_frequency_start_11,count_frequency_start_12,count_frequency_start_13,count_frequency_start_14,
-	count_frequency_start_21,count_frequency_start_22,count_frequency_start_23,count_frequency_start_24,
-	count_frequency_start_31,count_frequency_start_32,count_frequency_start_33,count_frequency_start_34,
-	count_frequency_start_41,count_frequency_start_42,count_frequency_start_43,count_frequency_start_44;
+	float count_frequency_start_11, count_frequency_start_12, count_frequency_start_13, count_frequency_start_14,
+	count_frequency_start_21, count_frequency_start_22, count_frequency_start_23, count_frequency_start_24,
+	count_frequency_start_31, count_frequency_start_32, count_frequency_start_33, count_frequency_start_34,
+	count_frequency_start_41, count_frequency_start_42, count_frequency_start_43, count_frequency_start_44;
 	
 	//azzerare i contatori
 	
@@ -515,55 +515,54 @@ int main() {
 	
 	//COLONNE: START, RIGHE: FREQUENZE (o al contrario???)
 	
-	for(i=0;i<N;i++) {
-		
+	for(i=0; i<N; i++) {
 		
 		//prima riga
-		if(delta_frequency_norm[i] <0.25) {
+		if(delta_frequency_norm[i] < 0.25) {
 			//prima colonna
-			if(delta_start_norm[i]<0.25) count_frequency_start_11++;
+			if (delta_start_norm[i] < 0.25) count_frequency_start_11++;
 			//seconda colonna
-			else if (delta_start_norm[i]>=0.25 & delta_start_norm[i]<0.5) count_frequency_start_12++;
+			else if (delta_start_norm[i] >= 0.25 & delta_start_norm[i] < 0.5) count_frequency_start_12++;
 			//terza colonna
-			else if(delta_start_norm[i]>=0.5 & delta_start_norm[i]<0.75) count_frequency_start_13++;
+			else if (delta_start_norm[i] >= 0.5 & delta_start_norm[i] < 0.75) count_frequency_start_13++;
 			//quarta colonna
-			else if (delta_start_norm[i]>=0.75) count_frequency_start_14++;
-				} 
+			else if (delta_start_norm[i] >= 0.75) count_frequency_start_14++;
+		} 
 		
 		//seconda riga
-		else if(delta_frequency_norm[i] >=0.25 & delta_frequency_norm[i]<0.5) {
+		else if(delta_frequency_norm[i] >= 0.25 & delta_frequency_norm[i] < 0.5) {
 			//prima colonna
-			if(delta_start_norm[i]<0.25) count_frequency_start_21++;
+			if (delta_start_norm[i] < 0.25) count_frequency_start_21++;
 			//seconda colonna
-			else if (delta_start_norm[i]>=0.25 & delta_start_norm[i]<0.5) count_frequency_start_22++;
+			else if (delta_start_norm[i] >= 0.25 & delta_start_norm[i] < 0.5) count_frequency_start_22++;
 			//terza colonna
-			else if(delta_start_norm[i]>=0.5 & delta_start_norm[i]<0.75) count_frequency_start_23++;
+			else if (delta_start_norm[i] >= 0.5 & delta_start_norm[i] < 0.75) count_frequency_start_23++;
 			//quarta colonna
-			else if (delta_start_norm[i]>=0.75) count_frequency_start_24++;
+			else if (delta_start_norm[i] >= 0.75) count_frequency_start_24++;
 		} 
 		
 		//terza riga
-		else if(delta_frequency_norm[i] >=0.5 & delta_frequency_norm[i]<0.75) {
+		else if(delta_frequency_norm[i] >= 0.5 & delta_frequency_norm[i] < 0.75) {
 			//prima colonna
-			if(delta_start_norm[i]<0.25) count_frequency_start_31++;
+			if (delta_start_norm[i] < 0.25) count_frequency_start_31++;
 			//seconda colonna
-			else if (delta_start_norm[i]>=0.25 & delta_start_norm[i]<0.5) count_frequency_start_32++;
+			else if (delta_start_norm[i] >= 0.25 & delta_start_norm[i] < 0.5) count_frequency_start_32++;
 			//terza colonna
-			else if(delta_start_norm[i]>=0.5 & delta_start_norm[i]<0.75) count_frequency_start_33++;
+			else if (delta_start_norm[i] >= 0.5 & delta_start_norm[i] < 0.75) count_frequency_start_33++;
 			//quarta colonna
-			else if (delta_start_norm[i]>=0.75) count_frequency_start_34++;
+			else if (delta_start_norm[i] >= 0.75) count_frequency_start_34++;
 		} 
 		
 		//quarta riga
-		else if(delta_frequency_norm[i] >0.75) {
+		else if(delta_frequency_norm[i] >= 0.75) { //changed it to >= instead of just >, else it won't be triggered if exact 0.75 value appears
 			//prima colonna
-			if(delta_start_norm[i]<0.25) count_frequency_start_41++;
+			if (delta_start_norm[i] < 0.25) count_frequency_start_41++;
 			//seconda colonna
-			else if (delta_start_norm[i]>=0.25 & delta_start_norm[i]<0.5) count_frequency_start_42++;
+			else if (delta_start_norm[i] >= 0.25 & delta_start_norm[i] < 0.5) count_frequency_start_42++;
 			//terza colonna
-			else if(delta_start_norm[i]>=0.5 & delta_start_norm[i]<0.75) count_frequency_start_43++;
+			else if (delta_start_norm[i] >= 0.5 & delta_start_norm[i] < 0.75) count_frequency_start_43++;
 			//quarta colonna
-			else if (delta_start_norm[i]>=0.75) count_frequency_start_44++;
+			else if (delta_start_norm[i] >= 0.75) count_frequency_start_44++;
 		} 
 	}
 		
@@ -571,6 +570,7 @@ int main() {
 	//matrice vera e propria
 	
 	float matrix_frequency_start[5][5]; //se comincio a numerare da 1 -> non 4 ma 5.
+	// i don't understand why leave one row and one column empty
 	
 	matrix_frequency_start[1][1]=count_frequency_start_11/N;
 	matrix_frequency_start[1][2]=count_frequency_start_12/N;
@@ -592,22 +592,21 @@ int main() {
 	
 	printf("\n La matrice frequenze-start e' \n\n");
 	
-	for(i=1;i<5;i++) { //indice di riga
-		for(j=1;j<5;j++) {  //indice di colonna
-			printf("%.2f\t",matrix_frequency_start[i][j]); //con %.1f stampa float con una sola cifra decimale
+	for(i=1; i<5; i++) { //indice di riga
+		for(j=1; j<5; j++) {  //indice di colonna
+			printf("%.2f\t", matrix_frequency_start[i][j]); //con %.1f stampa float con una sola cifra decimale
 		}
 		printf("\n");
 	}
 	printf("\n\n");
 	
 	
-	for(i=1;i<5;i++) { //indice di riga
-		for(j=1;j<5;j++) {  //indice di colonna
+	for(i=1; i<5; i++) { //indice di riga
+		for(j=1; j<5; j++) {  //indice di colonna
 			fprintf(file_dati_uscita_frequency_start,"%.2f\t",matrix_frequency_start[i][j]); //con %.1f stampa float con una sola cifra decimale
 		}
 		fprintf(file_dati_uscita_frequency_start,"\n");
 	}
-	
 	
 	
 	/* Matrice variazioni frequenze-durate */
