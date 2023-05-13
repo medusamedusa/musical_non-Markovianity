@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#define N 7
+#define N 7 //this is actually driving a lot of things below, I think it is the number of notes, which could be retrieved programmatically from the files just by looking at the number of lines.
 
 //varia a seconda del numero di note della sequenza in esame. Da cambiare manualmente, come il nome dei file
 
@@ -10,9 +10,9 @@
 
 int main() {
 	
-	float frequency[N], start[N],duration[N], intensity[N], delta_frequency[N],delta_start[N],delta_duration[N],delta_intensity[N]; //mettere come double. &lf?
-	float somma_freq,somma_start,somma_duration,somma_intensity,mean_value_frequency,mean_value_start,mean_value_duration,mean_value_intensity;
-	
+	float frequency[N], start[N], duration[N], intensity[N], delta_frequency[N], delta_start[N], delta_duration[N], delta_intensity[N]; //mettere come double. &lf?
+	float somma_freq, somma_start, somma_duration, somma_intensity, mean_value_frequency, mean_value_start, mean_value_duration, mean_value_intensity;			
+ 	
 	int i,j;
 	
 	FILE *file_dati_entrata;
@@ -38,8 +38,6 @@ int main() {
 //	file_dati_uscita_start_intensity = fopen("/Users/mariamannone/Desktop/Programma_MatriciMusica/numeri_GLASS/matrici_Glass/Glass_start_intensity_12.txt","w");
 	
 	
-	
-	
 //	file_dati_entrata = fopen("/Users/mariamannone/Desktop/Programma_MatriciMusica/dati_Bellini/Bellini_16.txt","r");
 //	file_dati_uscita_frequency_start = fopen("/Users/mariamannone/Desktop/Programma_MatriciMusica/matrici_Bellini/Bellini_matrice_frequency_start_16.txt","w");
 //	file_dati_uscita_frequency_duration = fopen("/Users/mariamannone/Desktop/Programma_MatriciMusica/matrici_Bellini/Bellini_matrice_frequency_duration_16.txt","w");
@@ -53,8 +51,6 @@ int main() {
 //	file_dati_uscita_frequency_intensity = fopen("/Users/mariamannone/Desktop/Programma_MatriciMusica/matrici_Maderna/Maderna_matrice_frequency_intensity_2.txt","w");
 //	file_dati_uscita_duration_intensity = fopen("/Users/mariamannone/Desktop/Programma_MatriciMusica/matrici_Maderna/Maderna_matrice_duration_intensity_2.txt","w");
 //	file_dati_uscita_start_intensity = fopen("/Users/mariamannone/Desktop/Programma_MatriciMusica/matrici_Maderna/Maderna_matrice_start_intensity_2.txt","w");
-	
-	
 	
 	
 //	file_dati_entrata = fopen("/Users/mariamannone/Desktop/Programma_MatriciMusica/dati_Bellini_periodi/Bellini_frase_7.txt","r");
@@ -80,16 +76,14 @@ int main() {
 	/* Acquisizione dati */
 	 
 	
-	
-	
-	for(i=0;i<N;i++) {
-		fscanf(file_dati_entrata,"%f\t%f\t%f\t%f",&frequency[i],&start[i],&duration[i],&intensity[i]);
+	for(i=0; i<N; i++) {
+		fscanf(file_dati_entrata, "%f\t%f\t%f\t%f", &frequency[i], &start[i], &duration[i], &intensity[i]);
 	}
 	
 	printf("\nfrequenze\tstart\t\tdurate\tintensita'\n");
 	
-	for(i=0;i<N;i++) {
-		printf("%f\t%f\t%f\t%f\n",frequency[i],start[i],duration[i],intensity[i]);
+	for(i=0; i<N; i++) {
+		printf("%f\t%f\t%f\t%f\n", frequency[i], start[i], duration[i], intensity[i]);
 	}
 	
 	printf("\n");
@@ -140,24 +134,23 @@ int main() {
 	/* Calcolo dei valori medi */
 	
 	
-	for(i=0;i<N;i++) {
-		
+	for(i=0; i<N; i++) {	
 		somma_freq+=frequency[i];
 	}
 	
 	somma_start=0.;
 	
-	for(i=0;i<N;i++){
+	for(i=0; i<N; i++){
 		somma_start+=start[i];
 	}
 	
-	for(i=0;i<N;i++){
+	for(i=0; i<N; i++){
 		somma_duration+=duration[i];
 	}
 	
 	somma_intensity=0.;
 	
-	for(i=0;i<N;i++){
+	for(i=0; i<N; i++){
 		somma_intensity+=intensity[i];
 	}
 	
@@ -174,37 +167,30 @@ int main() {
 	
 	printf("\n\nFREQUENZE. Distanze dai valori medi:\n");
 	
-	for (i=0;i<N;i++) {
-		
-		delta_frequency[i]=sqrt((frequency[i]-mean_value_frequency)*(frequency[i]-mean_value_frequency));
-	
+	for (i=0; i<N; i++) {
+		delta_frequency[i] = sqrt( (frequency[i]-mean_value_frequency)*(frequency[i]-mean_value_frequency) );	
 	}
 	
 
-	
-	
-	//ordino in ordine crescente salvando i valori in un altri vettore, e poi divido i diversi vettori (quelli giusti) per il valore massimo.
-	
+	//ordino in ordine crescente salvando i valori in un altri vettore, e poi divido i diversi vettori (quelli giusti) per il valore massimo.	
 
 	
 	/* NORMALIZZAZIONE FREQUENZE */
 	
-	float delta_frequency_max,delta_frequency_min;
+	float delta_frequency_max, delta_frequency_min;
 	
 	float vettore_prova_delta_frequency[N];
 	
-	for(i=0;i<N;i++) {
-		
+	for(i=0; i<N; i++) {
 		vettore_prova_delta_frequency[i]=delta_frequency[i];  //così creo un vettore nuovo con i valori di delta frequenze, che però conservo
-																//nell'ordine giusto
-		
+																//nell'ordine giusto	
 	}
 
 	float vettore;
 	
-	for(i=0;i<N;i++) {
+	for(i=0; i<N; i++) { // this is just reordering the delta_frequency list so that we can easily retrieve its min and max values
 		
-		for(j=0;j<N-1;j++) {
+		for(j=0; j<N-1; j++) {
 			
 			if(vettore_prova_delta_frequency[j]>vettore_prova_delta_frequency[j+1]) {
 				vettore = vettore_prova_delta_frequency[j];
@@ -215,17 +201,14 @@ int main() {
 			
 		}
 		
-		
 	}
 	
 	//così l'ultimo vettore, l'N-esimo, sarà il più grande.
 	//il primo sarà il più piccolo.
 	
 	
-	for(i=0;i<N;i++) {
-		
-		printf("ordine dei vettori di prova: %f\n",vettore_prova_delta_frequency[i]);
-		
+	for(i=0; i<N; i++) {
+		printf("ordine dei vettori di prova: %f\n", vettore_prova_delta_frequency[i]);		
 	}
 	
 	
@@ -233,15 +216,14 @@ int main() {
 	
 	delta_frequency_min=vettore_prova_delta_frequency[0];  //associa il valore più piccolo a delta_frequency_min
 	
-	printf("delta frequency min = %f\tdelta frequency max = %f\n\n",delta_frequency_min,delta_frequency_max);
-	
+	printf("delta frequency min = %f\tdelta frequency max = %f\n\n", delta_frequency_min, delta_frequency_max);
 	
 	
 	float delta_frequency_norm[i];
 	
-	if(delta_frequency_max==delta_frequency_min)
+	if(delta_frequency_max == delta_frequency_min)
 	{
-		for(i=0;i<N;i++) {
+		for(i=0; i<N; i++) {
 			delta_frequency_norm[i]=delta_frequency[i]; //così, se i valori sono costanti e tutte le delta zero,
 														// non si pone il problema della divisione per zero quando normalizzo
 			printf("delta frequenze normalizzate %d = %f\n",i, delta_frequency_norm[i]);
@@ -249,20 +231,16 @@ int main() {
 	}
 
 	else {
-		delta_frequency_norm[0]=(delta_frequency[0]-delta_frequency_min)/(delta_frequency_max-delta_frequency_min);
+		delta_frequency_norm[0] = (delta_frequency[0]-delta_frequency_min) / (delta_frequency_max-delta_frequency_min);
 		printf("delta frequency min (0) = %f\n\n",delta_frequency[0]);  //stampato per controllare il metodo
-		
-		for(i=0;i<N;i++) {
-			delta_frequency_norm[i]=(delta_frequency[i]-delta_frequency_min)/(delta_frequency_max-delta_frequency_min);
-			printf("delta frequenze normalizzate %d = %f\n",i, delta_frequency_norm[i]);
-			
+		// not sure why we need to calculate and print just the first one if we are doing it for the entire list just after
+		for(i=0; i<N; i++) {
+			delta_frequency_norm[i] = (delta_frequency[i]-delta_frequency_min) / (delta_frequency_max-delta_frequency_min);
+			printf("delta frequenze normalizzate %d = %f\n", i, delta_frequency_norm[i]);			
 		}
 	}		
 	
-	
 		
-	
-
 	/*
 	 
 	 
@@ -280,19 +258,15 @@ int main() {
 	 */
 	
 	
-		
-	
 	printf("\n\nSTART. Distanze dai valori medi:\n");
 	
-	for (i=0;i<N;i++) {
+	for (i=0; i<N; i++) {
 		
 		//delta_start[i]=sqrt((start[i]-mean_value_start)*(start[i]-mean_value_start))/((start[i]+mean_value_start)*(start[i]+mean_value_start));
 		
 		delta_start[i]=sqrt((start[i]-mean_value_start)*(start[i]-mean_value_start));
 		
 	}
-	
-	
 	
 	
 	/* NORMALIZZAZIONE START */
@@ -302,15 +276,12 @@ int main() {
 	float vettore_prova_delta_start[N];
 	
 	for(i=0;i<N;i++) {
-		
 		vettore_prova_delta_start[i]=delta_start[i];  //così creo un vettore nuovo con i valori di delta start, che però conservo
 		//nell'ordine giusto
-		
 	}
 	
 	
-	
-	 for(i=0;i<N;i++) {   //attenzione, utilizzo qui "vettore" che però ha valori diversi rispetto a prima
+	for(i=0;i<N;i++) {   //attenzione, utilizzo qui "vettore" che però ha valori diversi rispetto a prima
 		
 		for(j=0;j<N-1;j++) {
 			
@@ -320,9 +291,7 @@ int main() {
 				vettore_prova_delta_start[j+1]=vettore;
 			}
 			//ordine crescente
-			
 		}
-		
 		
 	}
 	
@@ -330,9 +299,7 @@ int main() {
 	
 	
 	for(i=0;i<N;i++) {
-		
 		printf("ordine dei vettori di prova: %f\n",vettore_prova_delta_start[i]);
-		
 	}
 	
 	
@@ -341,13 +308,11 @@ int main() {
 	delta_start_min=vettore_prova_delta_start[0];
 	
 	
-
-	
 	printf("delta start min = %f\tdelta start max = %f\n\n",delta_start_min,delta_start_max);
 	
 	float delta_start_norm[i];
 	
-	if(delta_start_max==delta_start_min) {
+	if(delta_start_max == delta_start_min) {
 		
 		for(i=0;i<N;i++) {
 			delta_start_norm[i]=delta_start[i];
@@ -357,20 +322,16 @@ int main() {
 		delta_start_norm[0]=(delta_start[0]-delta_start_min)/(delta_start_max-delta_start_min);
 		printf("delta start min (0) = %f\n\n",delta_start[0]);  //stampato per controllare il metodo
 		
-		
 		for(i=0;i<N;i++) {
 			delta_start_norm[i]=(delta_start[i]-delta_start_min)/(delta_start_max-delta_start_min);
 			printf("delta start %d = %f\n",i, delta_start_norm[i]);
-			
 		}
 	}
 	
 
-	
 	printf("\n\nDURATE. Distanze dai valori medi:\n");
 	
 	for (i=0;i<N;i++) {
-		
 		//delta_duration[i]=sqrt((duration[i]-mean_value_duration)*(duration[i]-mean_value_duration))/((duration[i]+mean_value_duration)*(duration[i]+mean_value_duration));
 		
 		delta_duration[i]=sqrt((duration[i]-mean_value_duration)*(duration[i]-mean_value_duration));
@@ -378,8 +339,6 @@ int main() {
 		printf("delta durate %d = %f\n",i, delta_duration[i]);
 		
 	}
-	
-	
 	
 	
 	/* NORMALIZZAZIONE DURATE */
@@ -405,20 +364,16 @@ int main() {
 				vettore_prova_delta_duration[j]=vettore_prova_delta_duration[j+1];
 				vettore_prova_delta_duration[j+1]=vettore;
 			}
-			//ordine crescente
-			
+			//ordine crescente	
 		}
-		
 		
 	}
 	
 	//così l'ultimo vettore, l'N-esimo, sarà il più grande.
 	
 	
-	for(i=0;i<N;i++) {
-		
+	for(i=0; i<N; i++) {
 		printf("ordine dei vettori di prova: %f\n",vettore_prova_delta_duration[i]);
-		
 	}
 	
 	
@@ -427,12 +382,12 @@ int main() {
 	delta_duration_min=vettore_prova_delta_duration[0];
 
 	
-	printf("delta duration min = %f\tdelta duration max = %f\n\n",delta_duration_min,delta_duration_max);
+	printf("delta duration min = %f\tdelta duration max = %f\n\n", delta_duration_min, delta_duration_max);
 	
 	float delta_duration_norm[i];
 	
-	if(delta_duration_max==delta_duration_min) {
-		for(i=0;i<N;i++) {
+	if(delta_duration_max == delta_duration_min) {
+		for(i=0; i<N; i++) {
 			delta_duration_norm[i]=delta_duration[i];
 		}
 	}
@@ -440,10 +395,9 @@ int main() {
 		delta_duration_norm[0]=(delta_duration[0]-delta_duration_min)/(delta_duration_max-delta_duration_min);
 		printf("delta duration min (0) = %f\n\n",delta_duration[0]);  //stampato per controllare il metodo
 		
-		for(i=0;i<N;i++) {
+		for(i=0; i<N; i++) {
 			delta_duration_norm[i]=(delta_duration[i]-delta_duration_min)/(delta_duration_max-delta_duration_min);
 			printf("delta duration %d = %f\n",i, delta_duration_norm[i]);
-			
 		}
 	}
 	
@@ -459,8 +413,6 @@ int main() {
 	}
 	
 	printf("\n\n\n");
-		   
-	
 	
 	
 	/* NORMALIZZAZIONE INTENSITA' */
@@ -477,29 +429,25 @@ int main() {
 	}
 	
 	
-	for(i=0;i<N;i++) {   //attenzione, utilizzo qui "vettore" che però ha valori diversi rispetto a prima
+	for(i=0; i<N; i++) {   //attenzione, utilizzo qui "vettore" che però ha valori diversi rispetto a prima
 		
-		for(j=0;j<N-1;j++) {
+		for(j=0; j<N-1; j++) {
 			
 			if(vettore_prova_delta_intensity[j]>vettore_prova_delta_intensity[j+1]) {
 				vettore = vettore_prova_delta_intensity[j];
 				vettore_prova_delta_intensity[j]=vettore_prova_delta_intensity[j+1];
 				vettore_prova_delta_intensity[j+1]=vettore;
 			}
-			//ordine crescente
-			
+			//ordine crescente	
 		}
-		
 		
 	}
 	
 	//così l'ultimo vettore, l'N-esimo, sarà il più grande.
 	
 	
-	for(i=0;i<N;i++) {
-		
+	for(i=0; i<N; i++) {
 		printf("ordine dei vettori di prova: %f\n",vettore_prova_delta_intensity[i]);
-		
 	}
 	
 	
@@ -511,7 +459,7 @@ int main() {
 	
 	float delta_intensity_norm[i];
 	
-	if(delta_intensity_max==delta_intensity_min) {
+	if(delta_intensity_max == delta_intensity_min) {
 		delta_intensity_norm[i]=delta_intensity[i];
 	}
 	
@@ -523,10 +471,8 @@ int main() {
 		for(i=0;i<N;i++) {
 			delta_intensity_norm[i]=(delta_intensity[i]-delta_intensity_min)/(delta_intensity_max-delta_intensity_min);
 			printf("delta intensita' normalizzate %d = %f\n",i, delta_intensity_norm[i]);
-			
 		}
 	}
-		
 	
 	
 	//Tutti i delta sono compresi fra 0 e 1.
@@ -535,16 +481,14 @@ int main() {
 	// DEFINISCO I CONTATORI direttamente per gli elementi di matrice.
 	
 	
-	
-	
 	/* Matrice variazioni frequenze-start */
 	
 	//contatori relativi ai singoli elementi di matrice
 	
-	float count_frequency_start_11,count_frequency_start_12,count_frequency_start_13,count_frequency_start_14,
-	count_frequency_start_21,count_frequency_start_22,count_frequency_start_23,count_frequency_start_24,
-	count_frequency_start_31,count_frequency_start_32,count_frequency_start_33,count_frequency_start_34,
-	count_frequency_start_41,count_frequency_start_42,count_frequency_start_43,count_frequency_start_44;
+	float count_frequency_start_11, count_frequency_start_12, count_frequency_start_13, count_frequency_start_14,
+	count_frequency_start_21, count_frequency_start_22, count_frequency_start_23, count_frequency_start_24,
+	count_frequency_start_31, count_frequency_start_32, count_frequency_start_33, count_frequency_start_34,
+	count_frequency_start_41, count_frequency_start_42, count_frequency_start_43, count_frequency_start_44;
 	
 	//azzerare i contatori
 	
@@ -571,55 +515,54 @@ int main() {
 	
 	//COLONNE: START, RIGHE: FREQUENZE (o al contrario???)
 	
-	for(i=0;i<N;i++) {
-		
+	for(i=0; i<N; i++) {
 		
 		//prima riga
-		if(delta_frequency_norm[i] <0.25) {
+		if(delta_frequency_norm[i] < 0.25) {
 			//prima colonna
-			if(delta_start_norm[i]<0.25) count_frequency_start_11++;
+			if (delta_start_norm[i] < 0.25) count_frequency_start_11++;
 			//seconda colonna
-			else if (delta_start_norm[i]>=0.25 & delta_start_norm[i]<0.5) count_frequency_start_12++;
+			else if (delta_start_norm[i] >= 0.25 & delta_start_norm[i] < 0.5) count_frequency_start_12++;
 			//terza colonna
-			else if(delta_start_norm[i]>=0.5 & delta_start_norm[i]<0.75) count_frequency_start_13++;
+			else if (delta_start_norm[i] >= 0.5 & delta_start_norm[i] < 0.75) count_frequency_start_13++;
 			//quarta colonna
-			else if (delta_start_norm[i]>=0.75) count_frequency_start_14++;
-				} 
+			else if (delta_start_norm[i] >= 0.75) count_frequency_start_14++;
+		} 
 		
 		//seconda riga
-		else if(delta_frequency_norm[i] >=0.25 & delta_frequency_norm[i]<0.5) {
+		else if(delta_frequency_norm[i] >= 0.25 & delta_frequency_norm[i] < 0.5) {
 			//prima colonna
-			if(delta_start_norm[i]<0.25) count_frequency_start_21++;
+			if (delta_start_norm[i] < 0.25) count_frequency_start_21++;
 			//seconda colonna
-			else if (delta_start_norm[i]>=0.25 & delta_start_norm[i]<0.5) count_frequency_start_22++;
+			else if (delta_start_norm[i] >= 0.25 & delta_start_norm[i] < 0.5) count_frequency_start_22++;
 			//terza colonna
-			else if(delta_start_norm[i]>=0.5 & delta_start_norm[i]<0.75) count_frequency_start_23++;
+			else if (delta_start_norm[i] >= 0.5 & delta_start_norm[i] < 0.75) count_frequency_start_23++;
 			//quarta colonna
-			else if (delta_start_norm[i]>=0.75) count_frequency_start_24++;
+			else if (delta_start_norm[i] >= 0.75) count_frequency_start_24++;
 		} 
 		
 		//terza riga
-		else if(delta_frequency_norm[i] >=0.5 & delta_frequency_norm[i]<0.75) {
+		else if(delta_frequency_norm[i] >= 0.5 & delta_frequency_norm[i] < 0.75) {
 			//prima colonna
-			if(delta_start_norm[i]<0.25) count_frequency_start_31++;
+			if (delta_start_norm[i] < 0.25) count_frequency_start_31++;
 			//seconda colonna
-			else if (delta_start_norm[i]>=0.25 & delta_start_norm[i]<0.5) count_frequency_start_32++;
+			else if (delta_start_norm[i] >= 0.25 & delta_start_norm[i] < 0.5) count_frequency_start_32++;
 			//terza colonna
-			else if(delta_start_norm[i]>=0.5 & delta_start_norm[i]<0.75) count_frequency_start_33++;
+			else if (delta_start_norm[i] >= 0.5 & delta_start_norm[i] < 0.75) count_frequency_start_33++;
 			//quarta colonna
-			else if (delta_start_norm[i]>=0.75) count_frequency_start_34++;
+			else if (delta_start_norm[i] >= 0.75) count_frequency_start_34++;
 		} 
 		
 		//quarta riga
-		else if(delta_frequency_norm[i] >0.75) {
+		else if(delta_frequency_norm[i] >= 0.75) { //changed it to >= instead of just >, else it won't be triggered if exact 0.75 value appears
 			//prima colonna
-			if(delta_start_norm[i]<0.25) count_frequency_start_41++;
+			if (delta_start_norm[i] < 0.25) count_frequency_start_41++;
 			//seconda colonna
-			else if (delta_start_norm[i]>=0.25 & delta_start_norm[i]<0.5) count_frequency_start_42++;
+			else if (delta_start_norm[i] >= 0.25 & delta_start_norm[i] < 0.5) count_frequency_start_42++;
 			//terza colonna
-			else if(delta_start_norm[i]>=0.5 & delta_start_norm[i]<0.75) count_frequency_start_43++;
+			else if (delta_start_norm[i] >= 0.5 & delta_start_norm[i] < 0.75) count_frequency_start_43++;
 			//quarta colonna
-			else if (delta_start_norm[i]>=0.75) count_frequency_start_44++;
+			else if (delta_start_norm[i] >= 0.75) count_frequency_start_44++;
 		} 
 	}
 		
@@ -627,6 +570,7 @@ int main() {
 	//matrice vera e propria
 	
 	float matrix_frequency_start[5][5]; //se comincio a numerare da 1 -> non 4 ma 5.
+	// i don't understand why leave one row and one column empty
 	
 	matrix_frequency_start[1][1]=count_frequency_start_11/N;
 	matrix_frequency_start[1][2]=count_frequency_start_12/N;
@@ -648,22 +592,21 @@ int main() {
 	
 	printf("\n La matrice frequenze-start e' \n\n");
 	
-	for(i=1;i<5;i++) { //indice di riga
-		for(j=1;j<5;j++) {  //indice di colonna
-			printf("%.2f\t",matrix_frequency_start[i][j]); //con %.1f stampa float con una sola cifra decimale
+	for(i=1; i<5; i++) { //indice di riga
+		for(j=1; j<5; j++) {  //indice di colonna
+			printf("%.2f\t", matrix_frequency_start[i][j]); //con %.1f stampa float con una sola cifra decimale
 		}
 		printf("\n");
 	}
 	printf("\n\n");
 	
 	
-	for(i=1;i<5;i++) { //indice di riga
-		for(j=1;j<5;j++) {  //indice di colonna
+	for(i=1; i<5; i++) { //indice di riga
+		for(j=1; j<5; j++) {  //indice di colonna
 			fprintf(file_dati_uscita_frequency_start,"%.2f\t",matrix_frequency_start[i][j]); //con %.1f stampa float con una sola cifra decimale
 		}
 		fprintf(file_dati_uscita_frequency_start,"\n");
 	}
-	
 	
 	
 	/* Matrice variazioni frequenze-durate */
