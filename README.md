@@ -11,8 +11,16 @@ Starting in 2023, [Omar Costa Hamido](https://omarcostahamido.com) is reviewing 
 - make sure you have [Max/MSP](https://cycling74.com) installed on your machine
 - open the [musical_non-Markovianity.maxproj](/musical_non-Markovianity/musical_non-Markovianity.maxproj) file
   - this should launch Max and open the main patch
+
+### option 1: loading files
 - use the `click to open a file` button or drag and drop a file to the area below
   - you can load either `.txt` or `.mid` files
 - the top table will auto populate with the contents of the text file or the parsed MIDI file.
 - click the button labelled `GO!` to start computing this melody (some intermediary steps will be printed to the console)
 - the 5 tables on the right side will display the results
+
+### option 2: live recording
+- double click the `midiin` object to select your MIDI input interface
+- click the gray square above it - it will light up red, letting you know that it will to record as soon as you start playing
+- when done, click the red square again, or press the spacebar, to turn OFF recording
+- Bonus tip: in Max, navigate to the menu `Extras > GlobalTransport`. You can change its setting like speed, turn it ON with the button in front of `Activate`, and enable audio click track with the button in front of `Click`
