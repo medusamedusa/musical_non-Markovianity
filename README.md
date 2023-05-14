@@ -4,7 +4,9 @@ This repo contains the original C code by [Maria Mannone](http://mariamannone.co
 
 Starting in 2023, [Omar Costa Hamido](https://omarcostahamido.com) is reviewing and porting the code to [Max/MSP](https://cycling74.com). The goal is to make the code more interactive, compatible with regular MIDI files, and optimize the workflow.
 
-<img width="1102" alt="Screen Shot 2023-05-12 at 5 47 35 PM" src="https://github.com/omarcostahamido/musical_non-Markovianity/assets/18335360/7053ed65-082b-49e0-bef5-19d05e45e47b">
+<img width="1094" alt="Screen Shot 2023-05-14 at 5 28 16 PM" src="https://github.com/omarcostahamido/musical_non-Markovianity/assets/18335360/76e196f9-e566-43bf-b3f7-fc725f1c9004">
+
+<!-- <img width="1102" alt="Screen Shot 2023-05-12 at 5 47 35 PM" src="https://github.com/omarcostahamido/musical_non-Markovianity/assets/18335360/7053ed65-082b-49e0-bef5-19d05e45e47b"> -->
 
 ## How to run (the new Max version)
 
