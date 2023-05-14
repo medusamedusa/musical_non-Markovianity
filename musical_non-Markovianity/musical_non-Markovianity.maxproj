@@ -2,7 +2,7 @@
 	"name" : "musical_non-Markovianity",
 	"version" : 1,
 	"creationdate" : 3766680765,
-	"modificationdate" : 3766753244,
+	"modificationdate" : 3766920738,
 	"viewrect" : [ 25.0, 104.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -16,17 +16,7 @@
 				"toplevel" : 1
 			}
 ,
-			"vars.maxpat" : 			{
-				"kind" : "patcher",
-				"local" : 1
-			}
-,
-			"parseTableVals.maxpat" : 			{
-				"kind" : "patcher",
-				"local" : 1
-			}
-,
-			"parseInputFiles.maxpat" : 			{
+			"ifRanges.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -36,7 +26,22 @@
 				"local" : 1
 			}
 ,
-			"ifRanges.maxpat" : 			{
+			"parseInputFiles.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"parseTableVals.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"vars.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"liveInput.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
