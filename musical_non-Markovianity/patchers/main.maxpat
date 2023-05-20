@@ -40,13 +40,12 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"hidden" : 1,
 					"id" : "obj-18",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 13.0, 50.0, 22.0 ],
+					"patching_rect" : [ 38.0, 80.0, 50.0, 22.0 ],
 					"text" : "clear all"
 				}
 
