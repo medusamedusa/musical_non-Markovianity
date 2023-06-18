@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -148,17 +148,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-6",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 371.375, 333.0, 82.0, 22.0 ],
-					"text" : "print @level 1"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-5",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -224,8 +213,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 217.0, 286.0, 69.0, 22.0 ],
-					"text" : "zl.mth"
+					"patching_rect" : [ 217.0, 286.0, 145.0, 22.0 ],
+					"text" : "zl.mth @zlmaxsize 32767"
 				}
 
 			}
@@ -789,8 +778,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 217.0, 260.0, 38.0, 22.0 ],
-					"text" : "zl.reg"
+					"patching_rect" : [ 217.0, 260.0, 143.0, 22.0 ],
+					"text" : "zl.reg @zlmaxsize 32767"
 				}
 
 			}
@@ -801,8 +790,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 39.0, 87.0, 38.0, 22.0 ],
-					"text" : "zl.reg"
+					"patching_rect" : [ 39.0, 87.0, 143.0, 22.0 ],
+					"text" : "zl.reg @zlmaxsize 32767"
 				}
 
 			}
@@ -818,7 +807,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1304,7 +1293,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-86", 1 ],
-					"midpoints" : [ 166.5, 226.5, 276.5, 226.5 ],
+					"midpoints" : [ 166.5, 226.5, 352.5, 226.5 ],
 					"order" : 0,
 					"source" : [ "obj-15", 0 ]
 				}
