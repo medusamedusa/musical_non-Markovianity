@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,6 +39,53 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-61",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 9.0, 93.0, 54.0, 22.0 ],
+					"text" : "deferlow"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-64",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 9.0, 64.0, 75.0, 22.0 ],
+					"text" : "matrix #1 $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-65",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 9.0, 119.0, 82.0, 22.0 ],
+					"text" : "print @level 2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-67",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 9.0, 35.0, 141.0, 22.0 ],
+					"text" : "zl.len @zlmaxsize 32767"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-6",
 					"linecount" : 4,
@@ -139,8 +186,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 155.0, 229.0, 51.0, 22.0 ],
-					"text" : "zl.group"
+					"patching_rect" : [ 155.0, 229.0, 156.0, 22.0 ],
+					"text" : "zl.group @zlmaxsize 32767"
 				}
 
 			}
@@ -163,8 +210,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 187.0, 148.0, 37.0, 22.0 ],
-					"text" : "zl.len"
+					"patching_rect" : [ 187.0, 148.0, 141.0, 22.0 ],
+					"text" : "zl.len @zlmaxsize 32767"
 				}
 
 			}
@@ -175,8 +222,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 155.0, 95.0, 51.0, 22.0 ],
-					"text" : "zl.group"
+					"patching_rect" : [ 155.0, 95.0, 156.0, 22.0 ],
+					"text" : "zl.group @zlmaxsize 32767"
 				}
 
 			}
@@ -272,6 +319,27 @@
 				"patchline" : 				{
 					"destination" : [ "obj-76", 0 ],
 					"source" : [ "obj-124", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-65", 0 ],
+					"source" : [ "obj-61", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-61", 0 ],
+					"source" : [ "obj-64", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-64", 0 ],
+					"source" : [ "obj-67", 0 ]
 				}
 
 			}
