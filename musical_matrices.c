@@ -684,7 +684,7 @@ int main() {
 		} 
 		
 		//quarta riga
-		else if(delta_frequency_norm[i] >0.75) {
+		else if(delta_frequency_norm[i] >=0.75) {
 			//prima colonna
 			if(delta_duration_norm[i]<0.25) count_frequency_duration_41++;
 			//seconda colonna
@@ -819,7 +819,7 @@ int main() {
 		} 
 		
 		//quarta riga
-		else if(delta_frequency_norm[i] >0.75) {
+		else if(delta_frequency_norm[i] >=0.75) {
 			//prima colonna
 			if(delta_intensity_norm[i]<0.25) count_frequency_intensity_41++;
 			//seconda colonna
@@ -953,7 +953,7 @@ int main() {
 		} 
 		
 		//quarta riga
-		else if(delta_duration_norm[i] >0.75) {
+		else if(delta_duration_norm[i] >=0.75) {
 			//prima colonna
 			if(delta_intensity_norm[i]<0.25) count_duration_intensity_41++;
 			//seconda colonna
@@ -1084,7 +1084,7 @@ int main() {
 		} 
 		
 		//quarta riga
-		else if(delta_duration_norm[i] >0.75) {
+		else if(delta_duration_norm[i] >=0.75) {
 			//prima colonna
 			if(delta_intensity_norm[i]<0.25) count_start_intensity_41++;
 			//seconda colonna
