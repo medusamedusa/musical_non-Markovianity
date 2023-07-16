@@ -14,6 +14,8 @@ Starting in 2023, [Omar Costa Hamido](https://omarcostahamido.com) is reviewing 
 - open the [musical_non-Markovianity.maxproj](/musical_non-Markovianity/musical_non-Markovianity.maxproj) file
   - this should launch Max and open the main patch
 
+Note: You can download and run Max for free without authorizing it or activating the 30 day demo. See limitations [here](https://support.cycling74.com/hc/en-us/articles/360049995834-Max-8-Max-7-Authorization#link-2).
+
 ### option 1: loading files
 - use the `click to open a file` button or drag and drop a file to the area below
   - you can load either `.txt` or `.mid` files
@@ -26,3 +28,8 @@ Starting in 2023, [Omar Costa Hamido](https://omarcostahamido.com) is reviewing 
 - click the gray square above it - it will light up red, letting you know that it will to record as soon as you start playing
 - when done, click the red square again, or press the spacebar, to turn OFF recording
 - Bonus tip: in Max, navigate to the menu `Extras > GlobalTransport`. You can change its setting like speed, turn it ON with the button in front of `Activate`, and enable audio click track with the button in front of `Click`
+
+## Reporting problems and getting help
+For the Max version:  please check current issues [here](https://github.com/omarcostahamido/musical_non-Markovianity/issues) and add your comment on relevant thread, or open a new issue [here](https://github.com/omarcostahamido/musical_non-Markovianity/issues/new).
+For the C version: please check current issues [here](https://github.com/medusamedusa/musical_non-Markovianity/issues) and add your comment on relevant thread, or open a new issue [here](https://github.com/medusamedusa/musical_non-Markovianity/issues/new).
+Note: you need a free github account.
