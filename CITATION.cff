@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Hamido"
+  given-names: "Omar Costa"
+  orcid: "https://orcid.org/0000-0001-5077-853X"
+- family-names: "Mannone"
+  given-names: "Maria"
+  orcid: "https://orcid.org/0000-0003-3606-3436"
+title: "musical_non-Markovianity"
+version: 1.0.0
+doi: 10.5281/zenodo.8152692
+date-released: 2023-07-16
+url: "https://github.com/omarcostahamido/musical_non-Markovianity"
