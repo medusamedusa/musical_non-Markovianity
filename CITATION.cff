@@ -8,7 +8,7 @@ authors:
   given-names: "Maria"
   orcid: "https://orcid.org/0000-0003-3606-3436"
 title: "musical_non-Markovianity"
-version: 1.0.0
-doi: 10.5281/zenodo.8152692
-date-released: 2023-07-16
+version: 1.1.0
+doi: 10.5281/zenodo.8420570
+date-released: 2023-10-09
 url: "https://github.com/omarcostahamido/musical_non-Markovianity"
